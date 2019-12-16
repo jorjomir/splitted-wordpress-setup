@@ -47,3 +47,15 @@ function teva_custom_logo_setup()
     add_theme_support('custom-logo', $defaults);
 }
 add_action('after_setup_theme', 'teva_custom_logo_setup');
+
+/*  
+*   APPEARANCE -> CUSTOMIZE OPTIONS 
+*   Contact Us Page Information
+*/
+function teva_customize_theme_options($wp_customize)
+{
+    include_once(theme_dir . "/customize-options.php");
+
+    teva_customize_theme_options_import($wp_customize);
+}
+add_action('customize_register', 'teva_customize_theme_options');
